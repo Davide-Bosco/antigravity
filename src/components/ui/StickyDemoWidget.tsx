@@ -9,13 +9,13 @@ export function StickyDemoWidget() {
 
   if (isMinimized) {
     return (
-      <div className="fixed right-0 top-[65%] -translate-y-1/2 z-50 flex items-center">
+      <div className="fixed right-0 top-[65%] -translate-y-1/2 z-40 flex items-center">
         <button
           onClick={() => setIsMinimized(false)}
-          className="group flex items-center gap-2 rounded-l-2xl bg-[#E8001D] px-3 py-3.5 text-white shadow-2xl transition-all duration-300 hover:bg-[#C50018] hover:pr-4"
+          className="group flex items-center gap-2 rounded-l-2xl bg-[#E8001D] px-2.5 py-3 text-white shadow-2xl transition-all duration-300 hover:bg-[#C50018]"
           title="Apri Modulo Demo"
         >
-          <div className="relative h-5 w-5 animate-bounce">
+          <div className="relative h-4 w-4 animate-bounce">
             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="15" y="25" width="70" height="50" rx="15" fill="white" stroke="#0A0A0A" strokeWidth="6" />
               <rect x="28" y="40" width="12" height="20" rx="6" fill="#00C2FF" />
@@ -23,7 +23,7 @@ export function StickyDemoWidget() {
               <path d="M40 63 Q50 70 60 63" stroke="#00C2FF" strokeWidth="4" strokeLinecap="round" />
             </svg>
           </div>
-          <span className="font-mono text-[11px] font-bold uppercase tracking-widest writing-mode-vertical">
+          <span className="font-mono text-[10px] font-bold uppercase tracking-widest writing-mode-vertical">
             Demo
           </span>
         </button>
@@ -32,9 +32,31 @@ export function StickyDemoWidget() {
   }
 
   return (
-    <div className="fixed right-0 top-[65%] -translate-y-1/2 z-50 flex items-center transition-transform duration-500 max-w-[210px]">
-      {/* Container Compatto in Colori Microlys */}
-      <div className="relative flex flex-col rounded-l-2xl bg-[#E8001D] p-4 text-white shadow-[0_15px_35px_rgba(232,0,29,0.3)] border-l border-t border-b border-white/20 backdrop-blur-md overflow-visible">
+    <>
+      {/* Versione Mobile Compatta (solo linguetta che rimanda a /demo/) per non coprire mai lo schermo */}
+      <div className="fixed right-0 top-[65%] -translate-y-1/2 z-40 flex md:hidden items-center">
+        <Link
+          href="/demo/"
+          className="group flex items-center gap-1.5 rounded-l-2xl bg-[#E8001D] px-2.5 py-3 text-white shadow-2xl transition-all"
+        >
+          <div className="relative h-4 w-4 animate-bounce">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="25" width="70" height="50" rx="15" fill="white" stroke="#0A0A0A" strokeWidth="6" />
+              <rect x="28" y="40" width="12" height="20" rx="6" fill="#00C2FF" />
+              <rect x="60" y="40" width="12" height="20" rx="6" fill="#00C2FF" />
+              <path d="M40 63 Q50 70 60 63" stroke="#00C2FF" strokeWidth="4" strokeLinecap="round" />
+            </svg>
+          </div>
+          <span className="font-mono text-[10px] font-bold uppercase tracking-widest writing-mode-vertical">
+            Demo
+          </span>
+        </Link>
+      </div>
+
+      {/* Versione Desktop / Tablet Estesa (sopra i 768px) */}
+      <div className="fixed right-0 top-[65%] -translate-y-1/2 z-40 hidden md:flex items-center transition-transform duration-500 max-w-[210px]">
+        {/* Container Compatto in Colori Microlys */}
+        <div className="relative flex flex-col rounded-l-2xl bg-[#E8001D] p-4 text-white shadow-[0_15px_35px_rgba(232,0,29,0.3)] border-l border-t border-b border-white/20 backdrop-blur-md overflow-visible">
         {/* Pulsante chiudi/minimizza */}
         <button
           onClick={() => setIsMinimized(true)}
@@ -86,5 +108,6 @@ export function StickyDemoWidget() {
         </Link>
       </div>
     </div>
+    </>
   );
 }

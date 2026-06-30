@@ -127,39 +127,104 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu (Fixed Dropdown Overlay) */}
       {mobileOpen && (
-        <div className="border-t border-black/[0.08] bg-white px-6 py-6 shadow-2xl md:hidden">
-          <nav className="flex flex-col gap-1.5">
-            {links.map((link) => (
+        <div className="fixed top-[76px] left-0 right-0 max-h-[calc(100vh-76px)] overflow-y-auto bg-white/98 backdrop-blur-xl border-b border-black/10 shadow-2xl px-6 py-8 md:hidden animate-in slide-in-from-top-2 duration-200">
+          <nav className="flex flex-col gap-2">
+            <Link
+              href="/robot/"
+              className={`rounded-2xl px-4 py-3.5 text-lg font-bold transition ${
+                isActive("/robot/") ? "bg-[#E8001D]/10 text-[#E8001D]" : "text-zinc-800 hover:bg-zinc-100"
+              }`}
+              onClick={() => setMobileOpen(false)}
+            >
+              Robot
+            </Link>
+
+            {/* Sezione Soluzioni con sottomenu mobile ben visibile */}
+            <div className="flex flex-col rounded-2xl bg-zinc-50/80 border border-black/5 p-3 my-1">
               <Link
-                key={link.href}
-                href={link.href}
-                className={`rounded-xl px-4 py-3 text-base font-semibold transition ${
-                  isActive(link.href)
-                    ? "bg-[#E8001D]/10 text-[#E8001D]"
-                    : "text-zinc-700 hover:bg-zinc-100"
-                }`}
+                href="/soluzioni/"
+                className="px-3 py-2 text-base font-black uppercase tracking-wider text-[#E8001D]"
                 onClick={() => setMobileOpen(false)}
               >
-                {link.label}
+                Soluzioni (Tutti i Settori)
               </Link>
-            ))}
+              <div className="grid grid-cols-1 gap-1 mt-1 pl-2 border-l-2 border-[#E8001D]/30">
+                <Link
+                  href="/soluzioni/ristorazione/"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-[#E8001D] hover:bg-white"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Ristorazione & Delivery
+                </Link>
+                <Link
+                  href="/soluzioni/hotel/"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-[#E8001D] hover:bg-white"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Hotel & Hospitality
+                </Link>
+                <Link
+                  href="/soluzioni/healthcare/"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-[#E8001D] hover:bg-white"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Healthcare & Cliniche
+                </Link>
+                <Link
+                  href="/soluzioni/retail/"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-[#E8001D] hover:bg-white"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Retail & Supermercati
+                </Link>
+                <Link
+                  href="/soluzioni/industria/"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-zinc-700 hover:text-[#E8001D] hover:bg-white"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Industria & Logistica
+                </Link>
+              </div>
+            </div>
+
+            <Link
+              href="/settori/"
+              className={`rounded-2xl px-4 py-3.5 text-lg font-bold transition ${
+                isActive("/settori/") ? "bg-[#E8001D]/10 text-[#E8001D]" : "text-zinc-800 hover:bg-zinc-100"
+              }`}
+              onClick={() => setMobileOpen(false)}
+            >
+              Settori
+            </Link>
+            <Link
+              href="/chi-siamo/"
+              className={`rounded-2xl px-4 py-3.5 text-lg font-bold transition ${
+                isActive("/chi-siamo/") ? "bg-[#E8001D]/10 text-[#E8001D]" : "text-zinc-800 hover:bg-zinc-100"
+              }`}
+              onClick={() => setMobileOpen(false)}
+            >
+              Chi siamo
+            </Link>
             <Link
               href="/contatti/"
-              className="rounded-xl px-4 py-3 text-base font-semibold text-zinc-700 hover:bg-zinc-100 transition"
+              className={`rounded-2xl px-4 py-3.5 text-lg font-bold transition ${
+                isActive("/contatti/") ? "bg-[#E8001D]/10 text-[#E8001D]" : "text-zinc-800 hover:bg-zinc-100"
+              }`}
               onClick={() => setMobileOpen(false)}
             >
               Contatti
             </Link>
           </nav>
-          <div className="mt-6 border-t border-black/[0.08] pt-6">
+
+          <div className="mt-8 border-t border-black/10 pt-6">
             <Link
               href="/demo/"
-              className="inline-flex w-full items-center justify-center rounded-full bg-[#E8001D] py-3.5 text-base font-bold text-white shadow-md"
+              className="inline-flex w-full items-center justify-center rounded-full bg-[#E8001D] py-4 text-base font-bold text-white shadow-xl shadow-[#E8001D]/30 active:scale-95 transition"
               onClick={() => setMobileOpen(false)}
             >
-              Richiedi demo gratuita
+              Richiedi Prova sul Posto
             </Link>
           </div>
         </div>
