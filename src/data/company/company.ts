@@ -1,6 +1,8 @@
 export const company = {
   name: "Microlys Robotics",
   legalName: "Microlys Robotics S.r.l.",
+  vat: "01234567890",
+  piva: "01234567890",
   tagline: "Il tuo partner per l'automazione di servizio",
   tagline_en: "Your partner for service automation",
   description:

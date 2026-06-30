@@ -1,4 +1,4 @@
-import { Graph, Organization, Product, LocalBusiness } from "schema-dts";
+import { Graph, Organization, Product, LocalBusiness, WithContext } from "schema-dts";
 
 export const organizationJsonLd: Graph = {
   "@context": "https://schema.org",
@@ -42,7 +42,7 @@ export function productJsonLd(robot: {
   description: string;
   category: string;
   slug: string;
-}): Product {
+}): WithContext<Product> {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
