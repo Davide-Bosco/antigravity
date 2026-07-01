@@ -52,8 +52,8 @@
 @layer components {
 
   /* Layout */
-  .section-padding { @apply px-6 py-24 md:px-12 lg:px-20; }
-  .container-wide  { @apply mx-auto max-w-[1320px]; }
+  .section-padding { @apply px-6 py-24 md:px-12 lg:px-20 xl:px-24; }
+  .container-wide  { @apply mx-auto max-w-[2000px]; }
 
   /* Text Effects */
   .text-gradient {
