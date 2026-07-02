@@ -86,14 +86,14 @@ export function CustomCursor() {
         }`}
       />
 
-      {/* Lente d'Ingrandimento HUD Hi-Tech (ben visibile, illuminante ma perfetta per la lettura) */}
+      {/* Lente d'Ingrandimento Cristallo Ottico (effetto polarizzato ad alto contrasto su bianco, perfetto per la lettura) */}
       <div
         ref={lensRef}
         className={`fixed top-0 left-0 z-[9998] pointer-events-none hidden lg:flex items-center justify-center rounded-full transition-all duration-300 ease-out ${
           isVisible ? "opacity-100" : "opacity-0"
         } ${
           lensMode
-            ? "w-40 h-40 border-2 border-[#E8001D] bg-[#E8001D]/[0.07] shadow-[0_0_35px_rgba(232,0,29,0.35),_inset_0_0_25px_rgba(232,0,29,0.15)] scale-100"
+            ? "w-40 h-40 border-2 border-[#E8001D] bg-white/[0.25] backdrop-contrast-125 backdrop-saturate-150 shadow-[0_12px_35px_rgba(0,0,0,0.12),_0_0_25px_rgba(232,0,29,0.25),_inset_0_0_18px_rgba(255,255,255,0.9)] scale-100"
             : "w-7 h-7 border border-[#0A0A0A]/25 bg-transparent"
         }`}
       >
@@ -101,7 +101,7 @@ export function CustomCursor() {
         {lensMode && (
           <>
             {/* Anello tratteggiato rotante */}
-            <div className="absolute inset-2 rounded-full border border-dashed border-[#E8001D]/40 animate-[spin_12s_linear_infinite]" />
+            <div className="absolute inset-2 rounded-full border border-dashed border-[#E8001D]/35 animate-[spin_12s_linear_infinite]" />
             {/* Tacche di puntamento ai 4 lati */}
             <div className="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 h-3 bg-[#E8001D]/80 rounded-full" />
             <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-3 bg-[#E8001D]/80 rounded-full" />
