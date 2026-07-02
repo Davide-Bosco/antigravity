@@ -18,12 +18,16 @@ export function CustomCursor() {
     const lens = lensRef.current;
     if (!dot || !lens) return;
 
-    // Tracking GSAP ultra-rapido per mantenere il cerchio e il punto perfettamente centrati
-    const xDot = gsap.quickTo(dot, "x", { duration: 0.05, ease: "power3" });
-    const yDot = gsap.quickTo(dot, "y", { duration: 0.05, ease: "power3" });
+    // Imposta il centro esatto di rotazione e posizionamento su GSAP per evitare disallineamenti CSS
+    gsap.set(dot, { xPercent: -50, yPercent: -50 });
+    gsap.set(lens, { xPercent: -50, yPercent: -50 });
 
-    const xLens = gsap.quickTo(lens, "x", { duration: 0.1, ease: "power3" });
-    const yLens = gsap.quickTo(lens, "y", { duration: 0.1, ease: "power3" });
+    // Tracking GSAP ultra-rapido per mantenere il cerchio e il punto millimetricamente centrati
+    const xDot = gsap.quickTo(dot, "x", { duration: 0.03, ease: "power3" });
+    const yDot = gsap.quickTo(dot, "y", { duration: 0.03, ease: "power3" });
+
+    const xLens = gsap.quickTo(lens, "x", { duration: 0.08, ease: "power3" });
+    const yLens = gsap.quickTo(lens, "y", { duration: 0.08, ease: "power3" });
 
     const moveCursor = (e: MouseEvent) => {
       if (!isVisible) setIsVisible(true);
@@ -73,7 +77,7 @@ export function CustomCursor() {
       {/* Punto centrale ad alta precisione (rimane sempre visibile al centro del cursore/lente) */}
       <div
         ref={dotRef}
-        className={`fixed top-0 left-0 z-[9999] pointer-events-none hidden lg:block -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-200 ${
+        className={`fixed top-0 left-0 z-[9999] pointer-events-none hidden lg:block rounded-full transition-all duration-200 ${
           isVisible ? "opacity-100" : "opacity-0"
         } ${
           lensMode
@@ -85,7 +89,7 @@ export function CustomCursor() {
       {/* Lente d'Ingrandimento HUD Hi-Tech (ben visibile, illuminante ma perfetta per la lettura) */}
       <div
         ref={lensRef}
-        className={`fixed top-0 left-0 z-[9998] pointer-events-none hidden lg:flex items-center justify-center -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-300 ease-out ${
+        className={`fixed top-0 left-0 z-[9998] pointer-events-none hidden lg:flex items-center justify-center rounded-full transition-all duration-300 ease-out ${
           isVisible ? "opacity-100" : "opacity-0"
         } ${
           lensMode

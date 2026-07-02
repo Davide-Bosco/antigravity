@@ -31,9 +31,9 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="mb-6 text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#0A0A0A] leading-[1.06]">
+            <h1 className="mb-6 text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#0A0A0A] leading-[1.15] py-1">
               <TextSplitReveal text="Automazione" /> <br />
-              <span className="text-shine-red">Intelligente</span> <TextSplitReveal text="per il Tuo Locale" delay={200} />
+              <span className="text-shine-red inline-block py-1">Intelligente</span> <TextSplitReveal text="per il Tuo Locale" delay={200} />
             </h1>
 
             {/* Subtitle */}

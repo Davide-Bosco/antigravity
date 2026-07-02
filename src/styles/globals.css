@@ -86,6 +86,8 @@
     background-clip: text;
     animation: shineRed 3.5s linear infinite;
     display: inline-block;
+    padding-bottom: 0.2em;
+    margin-bottom: -0.2em;
   }
 
 
