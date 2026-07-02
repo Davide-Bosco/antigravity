@@ -10,33 +10,12 @@ import { TextSplitReveal } from "@/components/ui/TextSplitReveal";
 export default function Hero() {
   return (
     <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-white pt-36 pb-24 border-b border-black/[0.06]">
-      {/* Subtle Background Video Loop sotto le scritte */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-[0.25] mix-blend-multiply scale-105"
-        >
-          <source src="/Create_a_subtle_premium_webs.mp4" type="video/mp4" />
-        </video>
-        {/* Soft white gradient overlay per garantire leggibilità impeccabile del testo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-white/30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white" />
-      </div>
-
       {/* Background Subtle Tech Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#0A0A0A_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.035] pointer-events-none z-0" />
 
       {/* Atmospheric Soft Red Glow */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,_rgba(232,0,29,0.07)_0%,_transparent_70%)] rounded-full blur-[80px] pointer-events-none z-0" />
       <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(232,0,29,0.05)_0%,_transparent_70%)] rounded-full blur-[90px] pointer-events-none z-0" />
-
-      {/* Giant Ghost Number */}
-      <div className="absolute right-8 top-32 select-none pointer-events-none font-mono font-black tracking-tighter text-black/[0.022] text-[18rem] leading-none z-0">
-        01
-      </div>
 
       <div className="container-wide relative z-10 mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
