@@ -8,7 +8,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { RobotCard } from "@/components/cards/RobotCard";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
-import PinnedRobotShowcase from "@/components/sections/PinnedRobotShowcase";
+import GsapHorizontalShowcase from "@/components/sections/GsapHorizontalShowcase";
 import { getFeaturedRobots } from "@/data/robots/robots";
 import { company } from "@/data/company/company";
 import { ArrowRight, UtensilsCrossed, Building2, Sparkles, Truck, User, ShieldCheck, Award } from "lucide-react";
@@ -128,7 +128,7 @@ export default function HomePage() {
         </ScrollReveal>
       </section>
 
-      <PinnedRobotShowcase />
+      <GsapHorizontalShowcase />
 
       <ScrollReveal>
         <SectorsShowcase />
