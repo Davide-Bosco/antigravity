@@ -4,6 +4,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Badge } from "@/components/ui/Badge";
 import Link from "next/link";
 import { Target, Heart, Rocket, Users, Award, Globe, ShieldCheck, CheckCircle } from "lucide-react";
+import { GsapTimelineReveal } from "@/components/ui/GsapTimelineReveal";
 
 export const metadata: Metadata = {
   title: "Chi Siamo | Microlys Robotics — Partner ZCS & Distributore KEENON",
@@ -130,45 +131,8 @@ export default function ChiSiamoPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-24 bg-white border-b border-black/5">
-        <div className="container-wide mx-auto px-6">
-          <SectionTitle
-            title="Le Tappe della Nostra Crescita"
-            subtitle="Dalle prime installazioni di sala alla leadership tecnica sul territorio."
-            centered
-            dark={false}
-          />
-          <div className="max-w-4xl mx-auto relative mt-16">
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-[#E8001D]/20 -translate-x-1/2" />
-            <div className="space-y-12">
-              {timeline.map((item, index) => {
-                const isEven = index % 2 === 0;
-                return (
-                  <div
-                    key={item.year}
-                    className={`relative flex flex-col md:flex-row items-start ${
-                      isEven ? "md:flex-row-reverse" : ""
-                    }`}
-                  >
-                    <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-[#E8001D] border-4 border-white shadow-md -translate-x-1/2 mt-1.5 z-10" />
-                    <div className={`pl-16 md:pl-0 w-full md:w-1/2 ${isEven ? "md:pl-12 text-left" : "md:pr-12 md:text-right"}`}>
-                      <span className="text-sm font-mono font-black text-[#E8001D] block mb-1 tracking-wider">
-                        {item.year}
-                      </span>
-                      <div className="rounded-2xl border border-black/5 bg-[#F8F9FA] p-6 shadow-sm hover:border-[#E8001D] transition-colors">
-                        <p className="text-zinc-700 font-semibold text-sm leading-relaxed">
-                          {item.event}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Timeline GSAP Animata */}
+      <GsapTimelineReveal />
 
       {/* Final CTA */}
       <section className="py-20 bg-[#F8F9FA]">

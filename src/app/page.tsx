@@ -9,6 +9,8 @@ import { RobotCard } from "@/components/cards/RobotCard";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import GsapHorizontalShowcase from "@/components/sections/GsapHorizontalShowcase";
+import { GsapTextMarquee } from "@/components/ui/GsapTextMarquee";
+import { GsapStaggerReveal } from "@/components/ui/GsapStaggerReveal";
 import { getFeaturedRobots } from "@/data/robots/robots";
 import { company } from "@/data/company/company";
 import { ArrowRight, UtensilsCrossed, Building2, Sparkles, Truck, User, ShieldCheck, Award } from "lucide-react";
@@ -31,6 +33,9 @@ export default function HomePage() {
       <ScrollReveal>
         <TrustBadges />
       </ScrollReveal>
+
+      {/* Marquee Ticker GSAP */}
+      <GsapTextMarquee />
 
       {/* Corporate Partnership Showcase Section */}
       <section className="py-24 bg-white relative overflow-hidden border-b border-black/5">
@@ -81,7 +86,7 @@ export default function HomePage() {
             centered 
             dark={false}
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <GsapStaggerReveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((cat, idx) => (
               <ScrollReveal key={cat.slug} delay={idx * 100}>
                 <SpotlightCard className="h-full rounded-3xl">
@@ -105,7 +110,7 @@ export default function HomePage() {
                 </SpotlightCard>
               </ScrollReveal>
             ))}
-          </div>
+          </GsapStaggerReveal>
         </ScrollReveal>
       </section>
 

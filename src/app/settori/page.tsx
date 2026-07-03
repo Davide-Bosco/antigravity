@@ -5,6 +5,8 @@ import {
   UtensilsCrossed, Building2, Sparkles, Truck, Heart, ShoppingCart,
   ArrowRight, CheckCircle2
 } from "lucide-react";
+import { GsapTextMarquee } from "@/components/ui/GsapTextMarquee";
+import { GsapStaggerReveal } from "@/components/ui/GsapStaggerReveal";
 
 export const metadata: Metadata = {
   title: "Settori Applicativi | Microlys Robotics — Partner ZCS Zucchetti",
@@ -124,9 +126,12 @@ export default function SettoriPage() {
         </div>
       </section>
 
-      {/* Sectors List */}
+      {/* Marquee dark */}
+      <GsapTextMarquee dark />
+
+      {/* Sectors List — con Stagger 3D GSAP */}
       <section className="py-20 bg-[#F8F9FA] relative border-b border-black/5">
-        <div className="container-wide mx-auto px-6 space-y-10">
+        <GsapStaggerReveal className="container-wide mx-auto px-6 space-y-10">
           {sectors.map((sector) => {
             const Icon = sector.icon;
             return (
@@ -188,7 +193,7 @@ export default function SettoriPage() {
               </div>
             );
           })}
-        </div>
+        </GsapStaggerReveal>
       </section>
 
       {/* CTA */}

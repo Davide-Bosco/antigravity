@@ -4,6 +4,8 @@ import { useState } from "react";
 import { robots } from "@/data/robots/robots";
 import { RobotCard } from "@/components/cards/RobotCard";
 import { Sparkles } from "lucide-react";
+import { GsapTextMarquee } from "@/components/ui/GsapTextMarquee";
+import { GsapStaggerReveal } from "@/components/ui/GsapStaggerReveal";
 
 const categories = [
   { slug: "all", label: "Tutti i Modelli" },
@@ -68,7 +70,8 @@ export default function RobotCatalogClient() {
       {/* Grid */}
       <section className="py-20 bg-[#F8F9FA] relative min-h-[60vh]">
         <div className="container-wide mx-auto px-6">
-          <div className="mb-10 flex items-center justify-between border-b border-black/[0.08] pb-4">
+          <GsapTextMarquee />
+          <div className="my-10 flex items-center justify-between border-b border-black/[0.08] pb-4">
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-zinc-400">
               Elenco Filtri Attivi
             </span>
@@ -76,11 +79,11 @@ export default function RobotCatalogClient() {
               {filtered.length} {filtered.length === 1 ? "Modello Disponibile" : "Modelli Disponibili"}
             </span>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <GsapStaggerReveal className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.1}>
             {filtered.map((robot) => (
               <RobotCard key={robot.slug} robot={robot} />
             ))}
-          </div>
+          </GsapStaggerReveal>
         </div>
       </section>
     </>
