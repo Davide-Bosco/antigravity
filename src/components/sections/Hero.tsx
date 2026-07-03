@@ -9,7 +9,7 @@ import { TextSplitReveal } from "@/components/ui/TextSplitReveal";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-white pt-36 pb-24 border-b border-black/[0.06]">
+    <section data-cursor="laser" className="relative min-h-[88vh] flex items-center overflow-hidden bg-white pt-36 pb-24 border-b border-black/[0.06]">
       {/* Background Subtle Tech Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#0A0A0A_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.035] pointer-events-none z-0" />
 
