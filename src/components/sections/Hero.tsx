@@ -102,13 +102,28 @@ export default function Hero() {
                 {/* Pulsing Floor Shadow / Radar Base */}
                 <div className="absolute bottom-2 w-56 h-10 bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0.18)_0%,_transparent_70%)] rounded-full animate-pulse pointer-events-none" />
 
-                {/* Robot Image */}
+                {/* Robot Image & Secret Laser-Revealed Logo */}
                 <div className="relative z-10 w-4/5 sm:w-full flex justify-center overflow-hidden py-4">
-                  <img
-                    src="https://www.zcsamicorobot.com/uploads/robots/t10/T10.png"
-                    alt="DINERBOT T10"
-                    className="w-full h-auto max-h-[520px] object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.18)]"
-                  />
+                  <div className="relative inline-flex justify-center items-center">
+                    <img
+                      src="https://www.zcsamicorobot.com/uploads/robots/t10/T10.png"
+                      alt="DINERBOT T10"
+                      className="w-full h-auto max-h-[520px] object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.18)]"
+                    />
+                    
+                    {/* Easter Egg Ottico: Logo MICROLYS ROBOTICS nello schermo del robot */}
+                    {/* Normalmente invisibile ad occhio nudo (nero su nero #151518); si illumina di bianco/ciano solo sotto il filtro laser! */}
+                    <div className="absolute top-[17%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[36%] flex flex-col items-center justify-center pointer-events-none select-none z-20">
+                      <div className="flex items-center gap-1 text-[#151518] font-mono font-black text-[10px] sm:text-xs md:text-sm tracking-widest leading-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+                        <span>[</span>
+                        <span>MICROLYS</span>
+                        <span>]</span>
+                      </div>
+                      <div className="font-mono font-bold text-[6px] sm:text-[7px] md:text-[8px] tracking-[0.24em] text-[#1a0c10] uppercase mt-0.5 sm:mt-1 drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+                        ROBOTICS • ZCS
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Floating Feature Card Left */}
