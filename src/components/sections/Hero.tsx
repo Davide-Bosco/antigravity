@@ -111,17 +111,14 @@ export default function Hero() {
                       className="w-full h-auto max-h-[520px] object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.18)]"
                     />
                     
-                    {/* Easter Egg Ottico: Logo MICROLYS ROBOTICS nello schermo del robot */}
-                    {/* Normalmente invisibile ad occhio nudo (nero su nero #151518); si illumina di bianco/ciano solo sotto il filtro laser! */}
-                    <div className="absolute top-[17%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[36%] flex flex-col items-center justify-center pointer-events-none select-none z-20">
-                      <div className="flex items-center gap-1 text-[#151518] font-mono font-black text-[10px] sm:text-xs md:text-sm tracking-widest leading-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
-                        <span>[</span>
-                        <span>MICROLYS</span>
-                        <span>]</span>
-                      </div>
-                      <div className="font-mono font-bold text-[6px] sm:text-[7px] md:text-[8px] tracking-[0.24em] text-[#1a0c10] uppercase mt-0.5 sm:mt-1 drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
-                        ROBOTICS • ZCS
-                      </div>
+                    {/* Easter Egg Ottico: Logo ufficiale Microlys nello schermo (pancia) del robot */}
+                    {/* Normalmente invisibile ad occhio nudo grazie a brightness bassissima identica alla scocca scura; si rivela nitido e luminoso solo dentro la lente laser! */}
+                    <div className="absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[48%] max-w-[145px] flex items-center justify-center pointer-events-none select-none z-20">
+                      <img
+                        src="/images/brand/microlys-logo.png"
+                        alt="Microlys Robotics"
+                        className="w-full h-auto object-contain opacity-95 brightness-[0.14] contrast-[2.2] drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]"
+                      />
                     </div>
                   </div>
                 </div>
