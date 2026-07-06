@@ -9,7 +9,7 @@ import { TextSplitReveal } from "@/components/ui/TextSplitReveal";
 
 export default function Hero() {
   return (
-    <section data-cursor="laser" className="relative min-h-[88vh] flex items-center overflow-hidden bg-white pt-36 pb-24 border-b border-black/[0.06]">
+    <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-white pt-36 pb-24 border-b border-black/[0.06]">
       {/* Background Subtle Tech Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#0A0A0A_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.035] pointer-events-none z-0" />
 
@@ -104,7 +104,7 @@ export default function Hero() {
 
                 {/* Robot Image & Secret Laser-Revealed Logo */}
                 <div className="relative z-10 w-4/5 sm:w-full flex justify-center overflow-hidden py-4">
-                  <div className="relative inline-flex justify-center items-center">
+                  <div data-cursor="laser" className="relative inline-flex justify-center items-center">
                     <img
                       src="https://www.zcsamicorobot.com/uploads/robots/t10/T10.png"
                       alt="DINERBOT T10"
