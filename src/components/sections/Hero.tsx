@@ -112,8 +112,8 @@ export default function Hero() {
                     />
                     
                     {/* Logo Microlys rivelato ESCLUSIVAMENTE durante lo scan del cursore */}
-                    {/* opacity-0 di default (nessuna macchia o logo nero visibile senza mouse); compare illuminato (opacity-100) quando passi sopra con lo scan laser! */}
-                    <div className="absolute top-[18%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[44%] max-w-[150px] flex items-center justify-center pointer-events-none select-none z-20 opacity-0 group-hover/robot:opacity-100 transition-opacity duration-300">
+                    {/* opacity-0 di default (nessuna macchia o logo nero visibile senza mouse); compare illuminato nella PANCIA (opacity-100) quando passi sopra con lo scan laser! */}
+                    <div className="absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[48%] max-w-[155px] flex items-center justify-center pointer-events-none select-none z-20 opacity-0 group-hover/robot:opacity-100 transition-opacity duration-300">
                       <img
                         src="/images/brand/microlys-logo.png"
                         alt="Microlys Robotics"
