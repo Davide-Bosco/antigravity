@@ -104,20 +104,20 @@ export default function Hero() {
 
                 {/* Robot Image & Secret Laser-Revealed Logo */}
                 <div className="relative z-10 w-4/5 sm:w-full flex justify-center overflow-hidden py-4">
-                  <div data-cursor="laser" className="relative inline-flex justify-center items-center">
+                  <div data-cursor="laser" className="relative inline-flex justify-center items-center group/robot">
                     <img
                       src="https://www.zcsamicorobot.com/uploads/robots/t10/T10.png"
                       alt="DINERBOT T10"
                       className="w-full h-auto max-h-[520px] object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.18)]"
                     />
                     
-                    {/* Easter Egg Ottico: Logo ufficiale Microlys nello schermo (pancia) del robot */}
-                    {/* Normalmente invisibile ad occhio nudo grazie a brightness bassissima identica alla scocca scura; si rivela nitido e luminoso solo dentro la lente laser! */}
-                    <div className="absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[48%] max-w-[145px] flex items-center justify-center pointer-events-none select-none z-20">
+                    {/* Logo Microlys rivelato ESCLUSIVAMENTE durante lo scan del cursore */}
+                    {/* opacity-0 di default (nessuna macchia o logo nero visibile senza mouse); compare illuminato (opacity-100) quando passi sopra con lo scan laser! */}
+                    <div className="absolute top-[18%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[44%] max-w-[150px] flex items-center justify-center pointer-events-none select-none z-20 opacity-0 group-hover/robot:opacity-100 transition-opacity duration-300">
                       <img
                         src="/images/brand/microlys-logo.png"
                         alt="Microlys Robotics"
-                        className="w-full h-auto object-contain opacity-95 brightness-[0.14] contrast-[2.2] drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]"
+                        className="w-full h-auto object-contain drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]"
                       />
                     </div>
                   </div>
